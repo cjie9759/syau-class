@@ -1,0 +1,167 @@
+{
+    "firstday": 1,
+    "sectionTime": [{
+        "endTime": "0845",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 1,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "一",
+        "startTime": "0800",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "0940",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 2,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "一",
+        "startTime": "0855",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "1045",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 3,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "二",
+        "startTime": "1000",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "1140",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 4,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "二",
+        "startTime": "1055",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "1415",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 5,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "三",
+        "startTime": "1330",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "1510",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 6,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "三",
+        "startTime": "1425",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "1615",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 7,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "四",
+        "startTime": "1530",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "1710",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 8,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "四",
+        "startTime": "1625",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "1915",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 9,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "五",
+        "startTime": "1830",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "2010",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 10,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "五",
+        "startTime": "1925",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "2105",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 11,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "六",
+        "startTime": "2020",
+        "timeLength": "45",
+        "validSession": 1
+    }, {
+        "endTime": "2200",
+        "id": {
+            "semesterCode": "1",
+            "semesterTypeCode": "1",
+            "session": 12,
+            "sessionTypeCode": "01"
+        },
+        "sessionName": "六",
+        "startTime": "2115",
+        "timeLength": "45",
+        "validSession": 1
+    }],
+    "section": {
+        "bz": "",
+        "codeTermSectionPK": {
+            "jclxdm": "01",
+            "xqdm": "1",
+            "xqlxdm": "1"
+        },
+        "swjc": 4,
+        "tjc": 12,
+        "wsjc": 4,
+        "xqzs": 23,
+        "xwjc": 4,
+        "zc": "111111111111111111111110",
+        "zcsm": "1-23周",
+        "zdlsjcs": 4,
+        "zs": 23,
+        "zslsjcs": 2,
+        "zts": 7
+    }
+}

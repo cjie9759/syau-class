@@ -1,0 +1,16 @@
+{
+    "name": "沈农课表",
+    "short_name": "课表",
+    "description": "用于沈农学子查看个人课表",
+    "icons": [
+        {
+            "src": "/favicon.ico",
+            "sizes": "64x64",
+            "type": "application/x-ico"
+        }
+    ],
+    "start_url": "/user/55b7e8b895d047537e672250dd781555.html",
+    "display": "standalone",
+    "theme_color": "#B12A34",
+    "background_color": "#B12A34"
+}
