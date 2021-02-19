@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-            <title>
-                沈农课表
-            </title>
-        </meta>
-        <link href="https://www.layuicdn.com/layui/css/layui.css" rel="stylesheet" type="text/css">
-        </link>
-        <script src="https://www.layuicdn.com/layui/layui.js" type="text/javascript">
-        </script>
-        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
-        </script>
-        <link href="js13kpwa.webmanifest" rel="manifest">
-            <!-- https://code.jquery.com/jquery-3.5.1.min.js -->
-        </link>
-    </head>
-    <!--   <style type="text/css">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        沈农课表
+    </title>
+    </meta>
+    <link href="https://www.layuicdn.com/layui/css/layui.css" rel="stylesheet" type="text/css">
+    </link>
+    <script src="https://www.layuicdn.com/layui/layui.js" type="text/javascript">
+    </script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <link href="js13kpwa.webmanifest" rel="manifest">
+    <!-- https://code.jquery.com/jquery-3.5.1.min.js -->
+    </link>
+</head>
+<!--   <style type="text/css">
         *{
             margin: 0 ;
             padding: 0;
@@ -93,12 +94,13 @@
             background: #f8b73f;
         }
     </style> -->
-    <body>
-        <div class="week ">
-            <form class="layui-form">
-                <div class="layui-form-item" placeholder="输入周次" style="text-align:center;text-align-last:center;">
-                    <!-- <div class="layui-input-block"> -->
-                    <select id="week_sec" lay-verify="required" name="city">
+
+<body>
+    <div class="week ">
+        <form class="layui-form">
+            <div class="layui-form-item" placeholder="输入周次" style="text-align:center;text-align-last:center;">
+                <!-- <div class="layui-input-block"> -->
+                <select id="week_sec" lay-verify="required" name="city">
                         <option value="1">
                             第一周
                         </option>
@@ -172,99 +174,108 @@
                             第二十四周
                         </option>
                     </select>
-                </div>
-                <!-- </div> -->
-            </form>
-        </div>
-        <div class="ta" style="text-align:center; ">
-        </div>
-    </body>
-    <script type="text/javascript">
-        var user_data;
-        var table_data;
-        var xkxx;
+            </div>
+            <!-- </div> -->
+        </form>
+    </div>
+    <div class="ta" style="text-align:center; ">
+    </div>
+</body>
+<script type="text/javascript">
+    var user_data;
+    var table_data;
+    var xkxx;
 
-        // 周次初始化
-        var d = new Date();
-        d = d.getTime() - Date.parse("8/30/2020");
-        d = d/7/24/60/60/1000 + 2 ;
-        d = Math.floor(d);
-        $('#week_sec').val(d);
-        
-   /*     // $("#week_sec").change(function(){
-        form.on('select',function(){
-        // $("#week_sec").on("change",function(){
-        // $("input").change(function(){
-            alert("文本已被修改");
+    // 周次初始化
+    var d = new Date();
+    d = d.getTime() - Date.parse("3/1/2021");
+    d = d / 7 / 24 / 60 / 60 / 1000 + 2;
+    d = Math.floor(d);
+    $('#week_sec').val(d);
+
+    /*     // $("#week_sec").change(function(){
+         form.on('select',function(){
+         // $("#week_sec").on("change",function(){
+         // $("input").change(function(){
+             alert("文本已被修改");
+             reflash();
+         });*/
+
+    $.get("./table.html", function(data, status) {
+        $.get("./test.json", function(data, status) {
+            user_data = data;
+            xkxx = data.xkxx[0];
             reflash();
-        });*/
-
-        $.get("/table.html",function(data,status){
-            $.get("/test.json",function(data,status){
-                user_data = data;
-                xkxx = data.xkxx[0];
-                reflash();
-            });
+        });
         table_data = data;
         $('.ta').html(table_data);
 
-        });
-            
-        function reflash()
-        {
-            $('.ta').empty();
-            $('.ta').html(table_data);
-            // $('.layui-table[lay-size="lg"] td').css('padding','70px 30px');
-            $('.layui-table[lay-size="lg"] td').css({'padding':'50px 5px','line-height':'30px','font-size':'20px'});
-            $('.layui-input').css('height','7rem');
-            $('.layui-table').css('color','#000000');
-            $('body').css('font','25px Microsoft YaHei');
-            $('dd').css('padding','5px 0px');
-            // $('th').attr("lay-data","{minWidth:'12.5%'}");
+    });
 
-            // console.log(xkxx);
-            for (x in xkxx)
-            {
-                // var xkxx_x=xkxx[x];
-                // console.log(xkxx[x].timeAndPlaceList);
-                for (var i = 0,it=xkxx[x].timeAndPlaceList.length; i < it; i++) {
-                    var co_time = xkxx[x].timeAndPlaceList[i];
-                    var r=co_time.classSessions,l=co_time.classDay,data=co_time.coureName+'<br/>'+co_time.teachingBuildingName+co_time.classroomName+'<br/>'+co_time.weekDescription,rows=co_time.continuingSession,co_week=co_time.classWeek;
-                    add_co(r,l,data,rows,co_week);
-                    // console.log(co_time.campusName);
-                    // console.log(position);
-                }
+    function reflash() {
+        $('.ta').empty();
+        $('.ta').html(table_data);
+        // $('.layui-table[lay-size="lg"] td').css('padding','70px 30px');
+        $('.layui-table[lay-size="lg"] td').css({
+            'padding': '50px 5px',
+            'line-height': '30px',
+            'font-size': '20px'
+        });
+        $('.layui-input').css('height', '7rem');
+        $('.layui-table').css('color', '#000000');
+        $('body').css('font', '25px Microsoft YaHei');
+        $('dd').css('padding', '5px 0px');
+        // $('th').attr("lay-data","{minWidth:'12.5%'}");
+
+        // console.log(xkxx);
+        for (x in xkxx) {
+            // var xkxx_x=xkxx[x];
+            // console.log(xkxx[x].timeAndPlaceList);
+            for (var i = 0, it = xkxx[x].timeAndPlaceList.length; i < it; i++) {
+                var co_time = xkxx[x].timeAndPlaceList[i];
+                var r = co_time.classSessions,
+                    l = co_time.classDay,
+                    data = co_time.coureName + '<br/>' + co_time.teachingBuildingName + co_time.classroomName + '<br/>' + co_time.weekDescription,
+                    rows = co_time.continuingSession,
+                    co_week = co_time.classWeek;
+                add_co(r, l, data, rows, co_week);
+                // console.log(co_time.campusName);
+                // console.log(position);
             }
         }
-        function add_co(r,l,data,rows,co_week)
-        {
-            var week_sec = $('#week_sec').val();
-            week_sec = Number(week_sec);
-            // if (r < 10) {$r='0'+r}
-            if (co_week[week_sec - 1] == 0) {return null;}
-            $(('#ta'+r+l)).html(data);
-            // if (rows = 2) 
-            //     {
-            //         $('#ta'+r+l).attr("rowspan",rows);
-            //         r=r+1;
-            //         $('#ta'+r+l).remove();
-            //     }
-            $('#ta'+r+l).attr("rowspan",rows);
-            for (var i = 1; i < rows; i++) {
-                r=r+1;
-                $('#ta'+r+l).remove();
-            }
+    }
+
+    function add_co(r, l, data, rows, co_week) {
+        var week_sec = $('#week_sec').val();
+        week_sec = Number(week_sec);
+        // if (r < 10) {$r='0'+r}
+        if (co_week[week_sec - 1] == 0) {
+            return null;
         }
-    </script>
-    <script type="text/javascript">
-        layui.use('form', function(){
-            var form = layui.form;
-            form.on('select',function(){
+        $(('#ta' + r + l)).html(data);
+        // if (rows = 2) 
+        //     {
+        //         $('#ta'+r+l).attr("rowspan",rows);
+        //         r=r+1;
+        //         $('#ta'+r+l).remove();
+        //     }
+        $('#ta' + r + l).attr("rowspan", rows);
+        for (var i = 1; i < rows; i++) {
+            r = r + 1;
+            $('#ta' + r + l).remove();
+        }
+    }
+</script>
+<script type="text/javascript">
+    layui.use('form', function() {
+        var form = layui.form;
+        form.on('select', function() {
             // $("#week_sec").on("change",function(){
             // $("input").change(function(){
-                // alert("文本已被修改");
-                reflash();
-            });
+            // alert("文本已被修改");
+            reflash();
         });
-    </script>
+    });
+</script>
+
 </html>
