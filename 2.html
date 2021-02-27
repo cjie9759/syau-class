@@ -188,6 +188,7 @@
         var d = new Date();
         d = d.getTime() - Date.parse("8/30/2020");
         d = d/7/24/60/60/1000 + 2 ;
+        d < 1 && d =1;
         d = Math.floor(d);
         $('#week_sec').val(d);
         
