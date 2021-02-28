@@ -188,10 +188,10 @@
 
     // 周次初始化
     var d = new Date();
-    d = d.getTime() - Date.parse("8/30/2020");
-    d = d / 7 / 24 / 60 / 60 / 1000 + 2;
+    d = d.getTime() - Date.parse("3/1/2021");
+    d = d / 7 / 24 / 60 / 60 / 1000;
     d = Math.floor(d);
-    if (d < 1 && d > 22) {
+    if (d < 1 || d > 22) {
         d = 1;
     }
     $('#week_sec').val(d);
